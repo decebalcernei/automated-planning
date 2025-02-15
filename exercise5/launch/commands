@@ -1,0 +1,75 @@
+set instance r1 robotic_agent
+set instance l1 location
+set instance l2 location
+set instance l3 location
+set instance ca1 carrier
+set instance p1 person
+set instance p2 person
+set instance b1 box
+set instance b2 box
+set instance b3 box
+set instance b4 box
+set instance depot location
+
+set instance food content
+set instance medicine content
+set instance tools content
+
+set instance zero capacity
+set instance one capacity
+set instance two capacity
+set instance three capacity
+set instance four capacity
+
+
+
+set predicate (at_robot_loc r1 depot)
+set predicate (at_box_loc b1 depot)
+set predicate (at_box_loc b2 depot)
+set predicate (at_box_loc b3 depot)
+set predicate (at_box_loc b4 depot)
+set predicate (at_carrier_loc ca1 depot)
+set predicate (at_content_loc food depot)
+set predicate (at_content_loc tools depot)
+set predicate (at_content_loc medicine depot)
+
+set predicate (empty_robot r1)
+set predicate (not_holding r1 b1)
+set predicate (not_holding r1 b2)
+set predicate (not_holding r1 b3)
+set predicate (not_holding r1 b4)
+set predicate (not_attached_carrier r1 ca1)
+
+set predicate (not_loaded ca1 b1)
+set predicate (not_loaded ca1 b2)
+set predicate (not_loaded ca1 b3)
+set predicate (not_loaded ca1 b4)
+
+set predicate (num_box_on_carrier ca1 zero)
+
+set predicate (at_person_loc p1 l2)
+set predicate (at_person_loc p2 l3)
+
+set predicate (content_needed p1 food)
+set predicate (content_needed p1 medicine)
+set predicate (content_needed p2 tools)
+
+set predicate (not_delivered p1 food)
+set predicate (not_delivered p1 medicine)
+set predicate (not_delivered p2 tools)
+
+set predicate (empty b1)
+set predicate (empty b2)
+set predicate (empty b3)
+set predicate (empty b4)
+
+set predicate (succ zero one)
+set predicate (succ one two)
+set predicate (succ two three)
+set predicate (succ three four)
+set predicate (pred four three)
+set predicate (pred three two)
+set predicate (pred two one)
+set predicate (pred one zero)
+
+set goal (and (delivered p1 food) (delivered p1 medicine) (delivered p2 tools))

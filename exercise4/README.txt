@@ -1,0 +1,1 @@
+To run the exercise: optic -N -W1,1 domain.pddl problem.pddl

@@ -1,0 +1,65 @@
+(define (problem eslp)
+  (:domain emergency-services-logistics)
+
+  (:objects
+    r1 - robotic_agent
+    l1 l2 l3 - location
+    b1 b2 b3 b4 - box
+    p1 p2 - person
+    ca1 - carrier
+    zero one two three four - capacity
+  )
+
+  (:htn
+  		:parameters ()
+		:subtasks (and
+            (task0 (deliver_task depot l2 b1 r1 ca1 p1 food zero one))
+            (task1 (deliver_task depot l2 b2 r1 ca1 p1 medicine zero one))
+            (task2 (deliver_task depot l3 b3 r1 ca1 p2 tools zero one))
+    )
+    :ordering (and
+            (task0 < task1)
+            (task1 < task2)
+    )
+
+  )
+
+  (:init
+    (at_robot_loc r1 depot)
+    (at_box_loc b1 depot)
+    (at_box_loc b2 depot)
+    (at_box_loc b3 depot)
+    (at_box_loc b4 depot)
+    (at_content_loc food depot)
+    (at_content_loc tools depot)
+    (at_content_loc medicine depot)
+    (at_carrier_loc ca1 depot)
+
+    (at_person_loc p1 l2)
+    (at_person_loc p2 l3)
+
+    (attached_carrier r1 ca1)
+    (num_box_on_carrier ca1 zero)
+
+    (content_needed p1 food)
+    (content_needed p1 medicine)
+    (content_needed p2 tools)
+
+    (succ zero one)
+    (succ one two)
+    (succ two three)
+    (succ three four)
+
+    (pred four three)
+    (pred three two)
+    (pred two one)
+    (pred one zero)
+    
+    (empty b4)
+    (empty b2)
+    (empty b1)
+    (empty b3)
+
+  )
+
+)

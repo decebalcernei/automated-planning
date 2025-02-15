@@ -1,0 +1,2 @@
+To run the exercise it's easier to call in the first terminal the script 'first_terminal.sh' and in the second one the script 'second_terminal.sh'.
+In the 'useful_commands' file there are the commands that can be inserted in the second terminal to "import" the commands, they can also be found in ./launch/commands

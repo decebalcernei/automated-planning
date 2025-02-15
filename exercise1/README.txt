@@ -1,0 +1,1 @@
+To run the exercise: downward --alias lama-first domain.pddl problem.pddl

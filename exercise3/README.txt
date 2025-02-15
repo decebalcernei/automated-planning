@@ -1,0 +1,1 @@
+To run the exercise: java -jar <path_to_PANDA_jar>/PANDA.jar -parser hddl domain.hddl problem.hddl
